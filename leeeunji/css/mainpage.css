@@ -1,0 +1,68 @@
+#container {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 20px;
+    width: 1024px;
+    height: 768px;
+    background-color: beige;
+    margin: 0 auto;
+}
+/*--------------------- header ---------------------*/
+header {
+    background-color: #fff;
+}
+
+ul.menu {
+    list-style: none;
+    margin: 0 auto;
+}
+ul.menu li {
+    float: left;
+    
+}
+ul.menu a {
+    color: rgb(20, 20, 20);
+    text-decoration: none;
+    padding: 5px 12px ;
+}
+ul.menu img#homeLogo {
+    width: 50px;
+}
+ul li p {
+    color:#fff;
+    /* background-color: aqua; */
+}
+/* 양쪽 길이 조정 다시하기 */
+ul li p#leftP {
+    width: 200px;
+}
+ul li p#rightP {
+    width: 300px;
+}
+ul li.memberMenu {
+    margin-right: 0;
+}
+
+
+header hr {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 2px;
+    border-color: #000;
+    background-color: #000;
+}
+
+.motto {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.latin {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 40%;
+    margin-bottom: 60px;
+}
