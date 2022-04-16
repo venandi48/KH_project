@@ -1,0 +1,15 @@
+header {
+    height: 200px;
+}
+#profile-photo {
+    width: 500px;
+}
+
+img.arrow {
+    width: 60px;
+    transform: rotate(90deg);
+}
+
+#gitHub {
+    /* 여기다 이미지 배경깔기 */
+}
