@@ -1,0 +1,94 @@
+#container {
+    margin: 0 auto;
+    padding: 20px 12px;
+    width: 1000px;
+    height: 728px;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+}
+/*
+    공통 link
+    <link rel="shortcut icon" href="./images/logo_home.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    폰트
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Playfair Display', serif;
+
+    컬러
+    #043c1c - 딥그린
+    #141414 - 메뉴바 텍스트
+    #888888
+*/
+
+/*================ common menu bar =================*/
+header {
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    
+    list-style: none;
+    width: 980px;
+    height: 70px;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 16px;
+    letter-spacing: -1;
+}
+.menu a {
+    color: #141414;
+    text-decoration: none;
+    padding: 0px 12px ;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 3.5;
+}
+.submenu {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    list-style: none;
+    padding: 0;
+    background: none;
+}
+.menu li:hover .submenu {
+    visibility: visible;
+    transition-property: color;
+}
+.submenu a {
+    height: 45px;
+    line-height: 2.2em;
+    color: #888;
+    font-size: 14px;
+
+    transition-duration: 200ms;
+}
+.submenu li:hover a {
+    color: #043c1c;
+    font-size: 16px;
+}
+
+/* 메뉴바 공백 */
+ul.menu li p {
+    color:rgb(0, 0, 0, 0);
+    width: 500px;
+}
+
+/*---------------------- logo ----------------------*/
+header img#homeLogo {
+    position: absolute;
+    width: 50px;
+    left: 475px;
+    top: 30px;
+}

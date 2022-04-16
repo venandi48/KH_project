@@ -1,83 +1,16 @@
-#container {
-    font-family: 'Noto Sans KR', sans-serif;
-    padding: 20px 12px;
-    width: 1000px;
-    height: 768px;
-    background-color: #fff;
-    margin: 0 auto; /* 화면 중심에 출력*/
-}
-/*
-    컬러차트
-    #043c1c - 딥그린
-*/
+
 /*===================== header =====================*/
 header {
     background-color: #fff;
     text-align: center;
     position: relative;
+    
     padding-bottom: 20px;
-}
-/*---------------------- menu ----------------------*/
-ul.menu {
-    display: flex;
-    justify-content: space-between;
-    
-    list-style: none;
-    width: 980px;
-    height: 70px;
-    padding: 10px;
-    margin: 0 auto;
-}
-
-ul.menu a {
-    color: #141414;
-    text-decoration: none;
-    padding: 0px 12px ;
-    display: table-cell;
-    vertical-align: middle;
-    line-height: 3.5;
-}
-ul.submenu {
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    list-style: none;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-ul.menu li:hover ul.submenu {
-    visibility: visible;
-}
-ul.submenu li a {
-    padding: 0;
-    line-height: 2.2em;
-    color: #7c7c7c;
-    /* transform: translateY(-10px); */
-}
-
-ul.menu>li li:hover a{
-    color: #043c1c;
-}
-
-
-
-/* 메뉴바 공백 */
-ul li p {
-    color:rgb(0, 0, 0, 0);
-    width: 500px;
-}
-/*---------------------- logo ----------------------*/
-header img#homeLogo {
-    position: absolute;
-    width: 50px;
-    left: 475px;
-    top: 10px;
+    height: 748px;
 }
 /*--------------------- motto ----------------------*/
 header hr {
-    margin-right: 0;
+    margin-right: 22px;
     margin-bottom: 10px;
     width: 100px;
     height: 2px;
@@ -85,6 +18,7 @@ header hr {
     background-color: #000;
 }
 .motto {
+    padding-right: 22px;
     text-align: right;
     font-size: 20px;
     font-weight: 400;
@@ -97,4 +31,147 @@ header hr {
     line-height: 40%;
     margin-bottom: 60px;
 }
+h1.latin:first-of-type {
+    margin-top: 170px;
+}
+/*--------------------- arrow ----------------------*/
+header img.arrow {
+    position: absolute;
+    bottom: 30px;
+    width: 60px;
+    transform: rotate(90deg);
+}
 
+/*==================== section =====================*/
+/*--------------------- first ----------------------*/
+#greetingSection {
+    /* background-color: antiquewhite; */
+    height: 1200px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 400;
+}
+.leftGreeting {
+    float: left;
+    width: 400px;
+    margin: 0 10px;
+
+    text-align: right;
+    padding-right: 30px;
+    font-size: 30px;
+    line-height: 1.5em;
+    letter-spacing: -1px;
+}
+.leftGreeting:first-child {
+    margin-top: 200px;
+}
+.rightGreeting {
+    float: right;
+    width: 500px;
+    padding-left: 30px;
+    
+    margin: 5px;
+    text-align: left;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: -1px;
+    
+}
+.rightGreeting:first-child {
+    margin-top: 450px;
+}
+div.rightGreeting .blankP {
+    color: rgb(0, 0, 0, 0);
+    font-size: 10px;
+}
+.rightGreeting#phraseWriter {
+    text-align: right;
+    padding-right: 50px;
+    color: #888;
+    font-size: 14px;
+}
+/*--------------------- second ---------------------*/
+#forkSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 768px;
+}
+#forkSection>img {
+    width: 13%;
+}
+#forkSection p {
+    margin: 80px auto 50px;
+    
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 23px;
+}
+#forkSection hr {
+    width: 30px;
+    height: 2px;
+    margin: 30px;
+    background-color: #888;
+    border: none;
+}
+.forkBtn {
+    margin: 20px;
+    width: 140px;
+    padding: 1.2em 1.8em;
+    
+    position: relative;
+    background: none;
+    border: rgb(0, 0, 0, 0);
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 400;
+}
+.forkBtn::before, .forkBtn::after {
+    content: '';
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.3s, opacity 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.forkBtn::before {
+    border: 2px solid #043c1c;
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1);
+  }
+.forkBtn:hover::before {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+.forkBtn:hover::after {
+    opacity: 0;
+    transform: scale3d(0.8, 0.8, 1);
+}
+
+/*===================== footer =====================*/
+footer {
+    padding: 50px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+#instarLink {
+    margin: 30px;
+    width: 48px;
+}
+#instarLink img {
+    width: inherit;
+}
+footer p {
+    margin: 5px;
+}
+footer span:not(:last-child)::after {
+    content: "|";
+    padding: 5px;
+}
