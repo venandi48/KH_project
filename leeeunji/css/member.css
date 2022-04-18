@@ -1,0 +1,69 @@
+.joinSection {
+    padding: 25px 0;
+    margin-top: 20px;
+    /* background-color: antiquewhite; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+legend {
+    margin: 20px;
+    text-align: center;
+
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+fieldset {
+    width: 950px;
+    margin: 20px;
+    border: none;
+}
+fieldset>h1 {
+    padding-left: 40px;
+    font-size: 18px;
+}
+fieldset ul {
+    padding-left: 40px;
+}
+fieldset li {
+    margin: 10px;
+    list-style: none;
+}
+fieldset label {
+    display: inline-block;
+    width: 100px;
+    color: #0D0D0D;
+}
+fieldset input {
+    margin: 2px;
+    height: 25px;
+    border: 1px solid #A68965;
+    background-color: #D9CDBF;
+    color: #0D0D0D;
+}
+label.address  {
+    display: block;
+    height: 100px;
+    float: left;
+}
+div.address {
+    width: 400px;
+}
+.mailingLi, .genderLi{
+    display: flex;
+    height: 35px;
+    align-items: center;
+}
+.genderLi #maleLabel, .genderLi #femaleLabel {
+    width: 50px;
+    margin: 5px
+}
+.mailingLi input{
+    zoom: 1.5;
+}
+.mailingLi label {
+    width: auto;
+}

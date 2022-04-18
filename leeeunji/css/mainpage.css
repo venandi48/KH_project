@@ -152,26 +152,3 @@ div.rightGreeting .blankP {
     opacity: 0;
     transform: scale3d(0.8, 0.8, 1);
 }
-
-/*===================== footer =====================*/
-footer {
-    padding: 50px 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 12px;
-}
-#instarLink {
-    margin: 30px;
-    width: 48px;
-}
-#instarLink img {
-    width: inherit;
-}
-footer p {
-    margin: 5px;
-}
-footer span:not(:last-child)::after {
-    content: "|";
-    padding: 5px;
-}

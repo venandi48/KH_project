@@ -99,3 +99,56 @@ header img#homeLogo {
     left: 475px;
     top: 30px;
 }
+
+/*---------------------- top -----------------------*/
+div.toTheTop {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #728476;
+    border-radius: 50%;
+    text-align: center;
+
+    position: fixed;
+    top: 90%;
+    right: 2%;
+    box-shadow: 2px 2px 7px #3f4440;
+    transition-duration: 300ms;
+}
+div.toTheTop:hover {
+    background-color: #3F4025;
+    box-shadow: none;
+}
+div.toTheTop img {
+    vertical-align: middle;
+    width: 80%;
+}
+
+/*===================== footer =====================*/
+footer {
+    padding: 50px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+#instarLink {
+    margin: 30px;
+    width: 48px;
+}
+#instarLink img {
+    width: inherit;
+}
+footer p {
+    margin: 5px;
+}
+footer span:not(:last-child)::after {
+    content: "|";
+    padding: 5px;
+}
+footer>hr {
+    width: 30px;
+    height: 2px;
+    border: none;
+    margin: 30px auto 50px;
+}

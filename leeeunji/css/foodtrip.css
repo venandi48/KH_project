@@ -1,0 +1,36 @@
+#postingBoard {
+    text-align: center;
+}
+p.boardTop {
+    margin: 20px;
+    font-size: 35px;
+}
+#postingBoard button {
+    float: right;
+    margin: 20px;
+}
+#postingBoard hr {
+    margin: 20px;
+}
+#hr1 {
+    clear: right;   
+}
+
+#postingBoard ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.posting {
+    margin: 3px;
+    background-color: lightgray;
+    width: 300px;
+    height: 300px;
+}
+.posting img {
+    width: inherit;
+    height: inherit;
+    
+}
