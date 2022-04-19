@@ -1,56 +1,65 @@
-.joinSection {
+/*
+    사용위치
+    member.html (회원가입)
+    login.html (로그인)
+*/
+/*===================== common =====================*/
+.joinSection, .loginSection{
     padding: 25px 0;
     margin-top: 20px;
-    /* background-color: antiquewhite; */
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-legend {
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+}
+form>h1 {
     margin: 20px;
-    text-align: center;
-
     font-size: 30px;
     letter-spacing: 1px;
-}
-fieldset {
-    width: 950px;
-    margin: 20px;
-    border: none;
 }
 fieldset>h1 {
     padding-left: 40px;
     font-size: 18px;
 }
-fieldset ul {
-    padding-left: 40px;
+#submitBtn {
+    width: 140px;
+    height: 40px;
+    background-color: #043c1c;
+    border: none;
+    border-radius: 50px;
+    color: #ddd;
+    font-weight: 700;
+    letter-spacing: -.5px;
 }
-fieldset li {
+
+/*---------------------- join ----------------------*/
+.joinField {
+    width: 950px;
+    margin: 20px;
+    border: none;
+}
+.joinField li {
     margin: 10px;
     list-style: none;
 }
-fieldset label {
+.joinField label {
     display: inline-block;
     width: 100px;
     color: #0D0D0D;
 }
-fieldset input {
+.joinField input {
     margin: 2px;
     height: 25px;
     border: 1px solid #A68965;
-    background-color: #D9CDBF;
+    background-color: #FBFBFA;
     color: #0D0D0D;
-}
-label.address  {
-    display: block;
-    height: 100px;
-    float: left;
-}
-div.address {
-    width: 400px;
 }
 .mailingLi, .genderLi{
     display: flex;
@@ -66,4 +75,60 @@ div.address {
 }
 .mailingLi label {
     width: auto;
+}
+label.address  {
+    height: 100px;
+    float: left;
+}
+.joinSection #submitBtn {
+    margin-bottom: 50px;
+}
+
+/*--------------------- login ----------------------*/
+.loginField {
+    width: 500px;
+    /* height: 250px; */
+    /* border: 1px solid #A68965; */
+    border: none;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: auto;
+}
+.loginField .inputDiv {
+    width: 400px;
+    margin: 30px;
+    padding: 0;
+}
+.inputDiv input {
+    width: inherit;
+    height: 50px;
+    padding-left: 15px;
+    background-color: #fbfbfb;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+.inputDiv input:first-of-type {
+    border-radius: 5px 5px 0px 0px;
+}
+.inputDiv input:last-of-type {
+    border-radius: 0px 0px 5px 5px;
+}
+#moveToJoin {
+    margin: 30px auto 30px;
+    font-size: 15px;
+    color: #888;
+    text-decoration: none;
+}
+#moveToJoin:hover {
+    color: #043c1c;
+    text-decoration: none;
+}
+
+
+footer {
+    margin: 0 -12px;
+    background-color: #ddd4;
 }
