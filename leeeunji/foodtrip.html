@@ -43,21 +43,67 @@
         <section id="postingBoard">
             <div>
                 <p class="boardTop">맛집 도장깨기</p>
-                <button class="boardTop">Posting</button>
+                <button class="boardTop" id="creatPostingBtn">Posting</button>
             </div>
             <hr id="hr1">
-            <ul>
-                <li class="posting"><img src="" alt=""></img></li>
-                <li class="posting"><img src="" alt=""></img></li>
-                <li class="posting"><img src="" alt=""></img></li>
-                <li class="posting"><img src="" alt=""></img></li>
-                <li class="posting"><img src="" alt=""></img></li>
-                <li class="posting"><img src="" alt=""></img></li>
-            </ul>
+            <div id="postingBoardDiv">
+                <ul>
+                    <li class="posting"><img src="" alt=""></img></li>
+                    <li class="posting"><img src="" alt=""></img></li>
+                    <li class="posting"><img src="" alt=""></img></li>
+                    <li class="posting"><img src="" alt=""></img></li>
+                </ul>
+            </div>
             <hr id="hr2">
-            <p>맛집은 정말 좋아</p>
         </section>
+
+        <!-- 리뷰 선택시 -->
+        <section class="reviewSection">
+            <div class="review-wrapper-back">
+                <div class="review-wrapper">
+                    <h1>Review. <span class="review-element" id="review-posting-no"></span></h1>
+                    <div class="restaurant-Info">
+                        <div class="review-element" id="restaurant-photo-group">
+                            <img id="restaurant-photo" src="./images/foodtrip_20220420_001.jpg" alt="">
+                        </div>
+                        <div class="review-element" id="restaurant-text-group">
+                            <span class="review-element" id="lacation">서울특별시 금천구</span>
+                            <div>
+                                <h1 class="review-element" id="restaurant-name">
+                                    카페연주네
+                                    <strong><span class="review-element" id="review-score">4.3</span></strong>
+                                </h1>
+                            </div>
+                            <p class="posting-date">
+                                <span class="review-element posting-date">작성일 : </span>
+                                <span class="review-element posting-date" id="review-date">2022-04-20</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="review-element" id="restaurant-comment">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat neque voluptatum rem officiis corporis explicabo odio nobis. Consectetur reprehenderit voluptatem est iusto suscipit eos similique sed. Nobis exercitationem quos itaque.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <hr>
+            <p class="footInfo">
+                <span>제작자 : 이은지</span>
+                <span>소속 : KH정보교육원</span>
+                <span>수강 : 자바기반 공공데이터 융합 개발자 양성과정</span>
+            </p>
+            <p class="footInfo">
+                <span>전화 : 010-1995-0408 </span>
+                <span>이메일 : leeeunji@gmail.com</span>
+            </p>
+            <p class="footInfo">
+                <span>주소 : 인천광역시 남동구 이런저런로78-9</span>
+            </p>
+        </footer>
+
     </div>
-    
+
 </body>
 </html>

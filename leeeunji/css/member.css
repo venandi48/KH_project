@@ -40,25 +40,26 @@ fieldset>h1 {
 }
 
 /*---------------------- join ----------------------*/
-.joinField {
+.join-fieldset {
     width: 950px;
     margin: 20px;
     border: none;
 }
-.joinField li {
+.join-fieldset li {
     margin: 10px;
     list-style: none;
 }
-.joinField label {
+.join-fieldset label {
     display: inline-block;
     width: 100px;
     color: #0D0D0D;
 }
-.joinField input {
+.join-fieldset input {
     margin: 2px;
     height: 25px;
-    border: 1px solid #A68965;
-    background-color: #FBFBFA;
+    padding-left: 5px;
+    border: 1px solid #aaa;
+    background-color: #fbfbfb;
     color: #0D0D0D;
 }
 .mailingLi, .genderLi{
@@ -85,7 +86,7 @@ label.address  {
 }
 
 /*--------------------- login ----------------------*/
-.loginField {
+.login-fieldset {
     width: 500px;
     /* height: 250px; */
     /* border: 1px solid #A68965; */
@@ -97,12 +98,12 @@ label.address  {
     align-items: center;
     padding: auto;
 }
-.loginField .inputDiv {
+.login-fieldset .input-div {
     width: 400px;
     margin: 30px;
     padding: 0;
 }
-.inputDiv input {
+.input-div input {
     width: inherit;
     height: 50px;
     padding-left: 15px;
@@ -110,10 +111,10 @@ label.address  {
     border: 1px solid #ddd;
     font-size: 15px;
 }
-.inputDiv input:first-of-type {
+.input-div input:first-of-type {
     border-radius: 5px 5px 0px 0px;
 }
-.inputDiv input:last-of-type {
+.input-div input:last-of-type {
     border-radius: 0px 0px 5px 5px;
 }
 #moveToJoin {
