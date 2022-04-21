@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/foodtrip.css">
+    <script src="./js/foodtrip.js"></script>
 </head>
-<body>
+<body onload="init();">
     <div id="container">
         <header>
             <ul class="menu">
@@ -48,29 +49,27 @@
             <hr id="hr1">
             <div id="postingBoardDiv">
                 <ul>
-                    <li class="posting"><img src="" alt=""></img></li>
-                    <li class="posting"><img src="" alt=""></img></li>
-                    <li class="posting"><img src="" alt=""></img></li>
-                    <li class="posting"><img src="" alt=""></img></li>
+                    <!-- 리뷰 리스팅 영역-->
                 </ul>
             </div>
             <hr id="hr2">
         </section>
 
         <!-- 리뷰 선택시 -->
-        <section class="reviewSection">
-            <div class="review-wrapper-back">
+        <section class="visibilityHidden" id="backgroundPlate">
+            <div class="visibilityHidden" id="reviewPlate">
+                <button id="closeReviewBtn"></button>
                 <div class="review-wrapper">
+                    <!-- 목록에서 고른 포스팅 id(=posting_no)에 따라 이미지, 점포정보 끌어오기-->
                     <h1>Review. <span class="review-element" id="review-posting-no"></span></h1>
                     <div class="restaurant-Info">
                         <div class="review-element" id="restaurant-photo-group">
-                            <img id="restaurant-photo" src="./images/foodtrip_20220420_001.jpg" alt="">
+                            <img id="restaurant-photo" src="./images/foodtrip/foodtrip_20220420_001.jpg" alt="">
                         </div>
                         <div class="review-element" id="restaurant-text-group">
-                            <span class="review-element" id="lacation">서울특별시 금천구</span>
+                            <span class="review-element" id="location"></span>
                             <div>
                                 <h1 class="review-element" id="restaurant-name">
-                                    카페연주네
                                     <strong><span class="review-element" id="review-score">4.3</span></strong>
                                 </h1>
                             </div>

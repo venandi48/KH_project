@@ -51,8 +51,10 @@ li.posting img {
 }
 
 /*--------------------- review ---------------------*/
-.reviewSection {
+.visibilityHidden {
     visibility: hidden;
+}
+.reviewSection {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -61,7 +63,7 @@ li.posting img {
     background-color: #555c;
 }
 .review-wrapper-back {
-    visibility: hidden;
+    position: relative;
     width: 800px;
     height: 80vh;
     background-color: #fff;
@@ -78,6 +80,18 @@ li.posting img {
 /* Hide scrollbar for Chrome, Safari and Opera */
 .review-wrapper-back::-webkit-scrollbar {
     display: none;
+}
+#closeReviewBtn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0px;
+    border: none;
+    background-color: #D9CDBF;
+    background-image: url(../images/close_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
 }
 .review-wrapper {
     padding: 50px 70px;
@@ -129,6 +143,9 @@ li.posting img {
     font-size: 1.1em;
     font-weight: 400;
     color: #128117;
+}
+.review-element #review-date {
+    margin-left: 0;
 }
 #restaurant-text-group p:last-child {
     margin-bottom: 0;
