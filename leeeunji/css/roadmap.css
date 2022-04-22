@@ -1,0 +1,139 @@
+#container {
+    height: 1200px;
+    background-image: url(../images/roadmap_bgi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header {
+    height: 180px;
+    background: none;
+}
+.menu a {
+    color: #333;
+}
+.menu #roadmap {
+    color: #000;
+    font-weight: 700;
+}
+.menu a:hover {
+    color: #8A8C3E;
+}
+
+.submenu li:hover a {
+    color: #8A8C3E;
+}
+hr {
+    width: 800px;
+    height: 1px;
+    background-color: #D9CDBF;
+    opacity: .5;
+    border: none;
+}
+
+/*-------------------- wrapper ---------------------*/
+.roadmapSection {
+    position: relative;
+}
+.roadmapWrapper {
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+}
+.planWrapper {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    width: 800px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.planWrapper::-webkit-scrollbar {
+    display: none;
+}
+/*-------------------- roadmap ---------------------*/
+.roadmapWrapper table {
+    border-collapse: collapse;
+    text-align: center;
+}
+.roadmapWrapper table thead {
+    font-size: 30px;
+    vertical-align: top;
+}
+.roadmapWrapper tr {
+    height: 100px;
+}
+.roadmapWrapper td {
+    width: 600px;
+    vertical-align: bottom;
+    color: #333;
+    font-size: 20px;
+    /* border: 1px solid #dddd; */
+}
+.roadmapWrapper td p {
+    margin: 10px;
+}
+.roadmapWrapper table img {
+    width: 5%;
+}
+/*---------------------- line ----------------------*/
+.borderDiv {
+    position: absolute;
+    width: 450px;
+    height: 205px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+#borderDiv1 {
+    top: 200px;
+    border-top: 5px solid #043c1c;
+}
+#borderDiv2 {
+    top: 200px;
+    right: 0;
+    border: 5px solid #043c1c;
+    border-left: none;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+#borderDiv3 {
+    top: 400px;
+    border: 5px solid #043c1c;
+    border-right: none;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+#borderDiv4 {
+    height: 210px;
+    top: 395px;
+    right: 0;
+    border-bottom: 5px solid #043c1c;
+}
+/*---------------------- plan ----------------------*/
+.planTable {
+    width: 600px;
+    text-align: center;
+    margin: 50px;
+    border-collapse: collapse;
+    font-size: 24px;
+}
+.planTable th, td{
+}
+.planTable thead {
+    height: 100px;
+    border-bottom: 1px solid #333;
+    font-size: 30px;
+}
+.planTable tbody {
+    vertical-align: top;
+    line-height: 2.5em;
+}
+.planTable ul {
+    list-style: none;
+}

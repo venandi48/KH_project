@@ -1,3 +1,30 @@
+header {
+    height: 100px;
+    background: none;
+}
+.menu a {
+    color: #333;
+}
+.menu #foodtrip {
+    color: #000;
+    font-weight: 700;
+}
+.menu a:hover {
+    color: #8A8C3E;
+}
+
+.submenu li:hover a {
+    color: #8A8C3E;
+}
+hr {
+    width: 800px;
+    height: 1px;
+    background-color: #D9CDBF;
+    opacity: .5;
+    border: none;
+}
+
+/*-------------------- section ---------------------*/
 #postingBoard {
     text-align: center;
 }
@@ -53,6 +80,9 @@ li.posting img {
 /*--------------------- review ---------------------*/
 .visibilityHidden {
     visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 .reviewSection {
     position: fixed;
