@@ -39,6 +39,11 @@ hr {
     width: 900px;
     margin: 0 auto;
 }
+.planWrapperHidden {
+    visibility: hidden;
+    position: absolute;
+    top: 150px;
+}
 .planWrapper {
     position: absolute;
     top: 150px;
