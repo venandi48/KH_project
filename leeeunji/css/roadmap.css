@@ -45,6 +45,8 @@ hr {
     top: 150px;
 }
 .planWrapper {
+    z-index: 100;
+    
     position: absolute;
     top: 150px;
     left: 100px;
@@ -54,13 +56,10 @@ hr {
     border-radius: 20px;
 
     display: flex;
-    justify-content: center;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.planWrapper::-webkit-scrollbar {
-    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+
 }
 /*-------------------- roadmap ---------------------*/
 .roadmapWrapper table {
@@ -79,12 +78,16 @@ hr {
     vertical-align: bottom;
     color: #333;
     font-size: 20px;
+    position: relative;
     /* border: 1px solid #dddd; */
 }
 .roadmapWrapper td p {
-    margin: 10px;
+    z-index: 1;
+    margin: 10px auto;
+    width: 100px;
 }
 .roadmapWrapper table img {
+    z-index: 1;
     width: 5%;
 }
 /*---------------------- line ----------------------*/
@@ -121,19 +124,30 @@ hr {
     border-bottom: 5px solid #043c1c;
 }
 /*---------------------- plan ----------------------*/
+.planWrapper>div {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.planWrapper>div::-webkit-scrollbar {
+    display: none;
+}
 .planTable {
     width: 600px;
     text-align: center;
-    margin: 50px;
+    margin: 30px;
     border-collapse: collapse;
-    font-size: 24px;
-}
-.planTable th, td{
+    font-size: 20px;
 }
 .planTable thead {
-    height: 100px;
+    height: 80px;
     border-bottom: 1px solid #333;
     font-size: 30px;
+    vertical-align: top;
 }
 .planTable tbody {
     vertical-align: top;
@@ -141,4 +155,15 @@ hr {
 }
 .planTable ul {
     list-style: none;
+}
+#closeYearPlanBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffff;
+    background-image: url(../images/close_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
 }

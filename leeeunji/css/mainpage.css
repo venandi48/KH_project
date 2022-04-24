@@ -1,7 +1,13 @@
 
+#container {
+    background-image: url(../images/alyssa-hurley-yekIZ4ltv1o-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 /*===================== header =====================*/
 header {
-    background-color: #fff;
+    /* background-color: #fff; */
     text-align: center;
     position: relative;
     
@@ -45,8 +51,7 @@ header img.arrow {
 /*==================== section =====================*/
 /*--------------------- first ----------------------*/
 #greetingSection {
-    /* background-color: antiquewhite; */
-    height: 1200px;
+    height: 1100px;
     font-family: 'Nanum Myeongjo', serif;
     font-weight: 400;
 }
@@ -97,9 +102,6 @@ div.right-greeting .blankP {
     text-align: center;
     height: 768px;
 }
-#forkSection>img {
-    width: 13%;
-}
 #forkSection p {
     margin: 80px auto 50px;
     
@@ -116,7 +118,7 @@ div.right-greeting .blankP {
 .forkBtn {
     margin: 20px;
     width: 140px;
-    padding: 1.2em 1.8em;
+    height: 60px;
     
     position: relative;
     background: none;
@@ -125,9 +127,16 @@ div.right-greeting .blankP {
     font-size: 17px;
     font-weight: 400;
 }
+.forkBtn a {
+    width: inherit;
+    height: inherit;
+    padding: 1em 1em;
+    
+    text-decoration: none;
+    color: #000;
+}
 .forkBtn::before, .forkBtn::after {
     content: '';
-    z-index: -1;
     border-radius: inherit;
     pointer-events: none;
     position: absolute;

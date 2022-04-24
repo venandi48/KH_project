@@ -2,7 +2,6 @@
     margin: 0 auto;
     padding: 20px 12px;
     width: 1000px;
-    height: 708px;
 
     font-family: 'Noto Sans KR', sans-serif;
     background-color: #fff;
@@ -27,7 +26,6 @@
 
 /*================ common menu bar =================*/
 header {
-    background-color: #fff;
     text-align: center;
     position: relative;
     padding-top: 20px;

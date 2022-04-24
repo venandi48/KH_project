@@ -45,6 +45,11 @@
         <section class="roadmapSection">
 
             <div class="roadmapWrapper">
+                <div class="borderDiv" id="borderDiv1"></div>
+                <div class="borderDiv" id="borderDiv2"></div>
+                <div class="borderDiv" id="borderDiv3"></div>
+                <div class="borderDiv" id="borderDiv4"></div>
+
                 <table>
                     <thead>
                         <tr>
@@ -54,12 +59,26 @@
                     <tbody>
                         <tr>
                             <td>
-                                <p class="planYear plan2019">2019</p>
-                                <img class="plan2019" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
+                                <p class="planYear plan-1">2019</p>
+                                <img class="plan-1" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
                             </td>
                             <td>
-                                <p class="planYear plan2022">2022</p>
-                                <img src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
+                                <p class="planYear plan-2">2022</p>
+                                <img class="plan-2" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="reverseYearTr">
+                            <td>
+                                <p class="planYear plan-4">2027</p>
+                                <img class="plan-4" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
+                            </td>
+                            <td>
+                                <p class="planYear plan-3">2025</p>
+                                <img class="plan-3" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
                             </td>
                         </tr>
                         <tr>
@@ -68,26 +87,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <p class="planYear plan2027">2027</p>
-                                <img class="plan2027" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
+                                <p class="planYear plan-5">2030</p>
+                                <img class="plan-5" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
                             </td>
                             <td>
-                                <p class="planYear plan2025">2025</p>
-                                <img class="plan2025" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="planYear plan2030">2030</p>
-                                <img class="plan2030" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
-                            </td>
-                            <td>
-                                <p class="planYear plan20nn">?</p>
-                                <img class="plan20nn" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
+                                <p class="planYear plan-6">?</p>
+                                <img class="plan-6" src="./images/upsidedown_trianglepng.png" alt="bookmark triangle">
                             </td>
                         </tr>
                         <tr>
@@ -96,31 +101,28 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <div class="borderDiv" id="borderDiv1"></div>
-                <div class="borderDiv" id="borderDiv2"></div>
-                <div class="borderDiv" id="borderDiv3"></div>
-                <div class="borderDiv" id="borderDiv4"></div>
             </div>
 
             <div class="planWrapperHidden" id="planWrapper">
-                <table class="planTable">
-                    <thead>
-                        <tr id="planYear">
-                            <th>2019</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="planList">
-                                <ul id="planUl">
-                                    <li><i>관련학과 복수전공</i></li>
-                                    <li><i>정보처리기사 자격증 취득</i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <button id="closeYearPlanBtn"></button>
+                <div>
+                    <table class="planTable">
+                        <thead>
+                            <tr id="planYear">
+                                <th>2019</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="planList">
+                                    <ul id="planUl">
+                                        <!-- <li><i>Lorem ipsum dolor sit amet1</i></li> -->
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </section>

@@ -52,30 +52,97 @@ const addData = () => {
     planList.push(new AnnualPlan(2099, [
         new Plan('수익창출이 가능한 사이드프로젝트 혹은 창업', false)
     ]));
+
+    // 년도 오름차순 정렬
+    planList.sort(function(a, b) {
+        return a.year - b.year;
+    });
 };
 
 // 로드맵 라인에 년도 렌더
 const renderYear = () => {
-    const targets = document.querySelectorAll(".planYear");
-
-    targets.forEach((target, indect) => {
-        const tmp = target.className;
-        console.log(typeof tmp, tmp);
+    const targetClassAll = [];
+    document.querySelectorAll(".planYear").forEach((targetTag, index) => {
+        targetClassAll.push(targetTag.className.split(" ")[1]);
     });
+
+    const diff = planList.length - targetClassAll.length;
+    for(let i = planList.length - 1 ; i >= planList.length - 6 ; i--){
+        const targetP = document.querySelector(`.${targetClassAll[i - diff]}`);
+        targetP.innerText = planList[i].year;
+    }
+
+    // 순서 반전시켜야하는 테이블 행 텍스트 수정
+    const reverseYear1 = document.querySelector(".reverseYearTr td:first-of-type p");
+    const reverseYear2 = document.querySelector(".reverseYearTr td:last-of-type p");
+    [reverseYear1.innerText, reverseYear2.innerText] = [reverseYear2.innerText, reverseYear1.innerText];
+
 };
- 
+
+const addOpenPlanListener = () => {
+    const planYears = document.querySelectorAll("tbody p, tbody img");
+
+    // 각 년도 클릭시 해당 plan창 열리는 이벤트리스너 추가
+    planYears.forEach((planYear, index) => {
+        planYear.addEventListener("click", openYearplan);
+        planYear.addEventListener("click", roadYearplanDetail);
+    });
+    console.log(`openPlan 이벤트리스너가 추가되었습니다.`);
+};
+
+function openYearplan() {
+    // plan창 태그 찾기
+    const backgroundPlate = document.getElementById("planWrapper");
+    
+    backgroundPlate.classList.add("planWrapper");
+    backgroundPlate.classList.remove("planWrapperHidden");
+};
+
+const addClosePlanListener = () => {
+    const closeBtn = document.getElementById("closeYearPlanBtn");
+    
+    // 닫기버튼 클릭시 해당 plan창 닫히는 이벤트리스너 추가
+    closeBtn.addEventListener("click", closeYearplan);
+    console.log(`closePlan 이벤트리스너가 추가되었습니다.`);
+};
+
+function closeYearplan() {
+    // plan창 태그 찾기
+    const backgroundPlate = document.getElementById("planWrapper");
+    
+    backgroundPlate.classList.add("planWrapperHidden");
+    backgroundPlate.classList.remove("planWrapper");
+};
+
 // 로드맵 선택한 년도의 플랜 렌더
-const renderPlan = () => {
+function roadYearplanDetail() {
+    
+    const plans = planList.filter((annualPlan, index) => {
+        return annualPlan.year == this.innerText;
+    });
+
+    // 타이틀 년도
+    document.querySelector("#planYear th").innerText = plans[0].year;
+    const target = document.querySelector("#planUl");
+
+    // 해당 년도 계획
+    target.innerHTML = plans[0].plan.reduce((html, eachplan, index) => {
+        // 달성한 계획은 녹색, 진행중인 계획은 적색
+        if(eachplan.status)
+            return html + `<li style="color:#080">${eachplan.title}</li>`;
+        else
+            return html + `<li style="color:#900">${eachplan.title}</li>`;
+    }, "");
+
 };
 
 const init= () => {
     // 로드맵 데이터 추가
     addData();
-    console.log(planList);
     renderYear();
     
-    // 이벤트 리스너 추가 (클릭시 플랜창 열림/닫힘) -> 닫힘버튼 추가해야됨..
-
-    // 로드맵 라인에 년도 렌더
+    // 이벤트 리스너 추가 (클릭시 플랜창 열림/닫힘)
+    addOpenPlanListener();
+    addClosePlanListener();
 
 };
