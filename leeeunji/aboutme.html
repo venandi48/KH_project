@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/aboutme.css">
+    <script src="./js/aboutme.js"></script>
 </head>
-<body>
+<body onload="init();">
     <div id="container">
         <header>
             <ul class="menu">
@@ -47,19 +48,19 @@
             <p>이제는 그 경험을 토대로 개발이라는 꿈에 두근거리는 마음을 안고 뛰어들었습니다.</p>
             <p>이곳은 여러분에게 그런 ‘이은지’를 보여드리기 위해 써내린 소개장입니다.</p>
             <p class="blankP">/</p>
-            <p>지금껏 쌓아온 시간을 통해 이은지가 어떤 사람인지 느낄 수 있기를.</p>
-            <p>더 나아가 여러분이 함께하고 싶은 개발자라고 느끼길 바라며</p>
+            <p>지금껏 쌓아온 시간을 통해 이은지가 어떤 사람인지 느낄 수 있길 바라며,</p>
+            <p>더 나아가 여러분이 함께하고 싶은 개발자라고 느끼길 바랍니다.</p>
             <p class="blankP">/</p>
-            <p id="aboutMe-today">2022년 4월 16일</p>
+            <p id="aboutMeToday"></p>
             <p>이은지 드림</p>
-            <button id="toCnCBtn">more</button>
+            <button id="toCnCBtn">down</button>
         </section>
         
         <section class="channel">
             <h1>Contact & Channel</h1>
             <ul>
-                <li id="gitHub"><a href="https://github.com/venandi48">Github</a>  </li>
-                <li id="notion"><a href="https://www.notion.so/HOME-d6761e94491d413399eef26a15ef8e08">Notion</a></li>
+                <li id="gitHub"><a id="gitHubA">Github</a>  </li>
+                <li id="notion"><a id="notionA">Notion</a></li>
             </ul>
         </section>
 

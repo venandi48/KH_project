@@ -80,13 +80,33 @@ const renderYear = () => {
 };
 
 const addOpenPlanListener = () => {
-    const planYears = document.querySelectorAll("tbody p, tbody img");
-
     // 각 년도 클릭시 해당 plan창 열리는 이벤트리스너 추가
+    const planYears = document.querySelectorAll("tbody p");
+    
     planYears.forEach((planYear, index) => {
         planYear.addEventListener("click", openYearplan);
-        planYear.addEventListener("click", roadYearplanDetail);
+        planYear.addEventListener("click", function(){
+            const plans = planList.filter((annualPlan, index) => {
+                return annualPlan.year == this.innerText;
+            });
+            roadYearplanDetail(plans);
+        });
     });
+    
+    // 각 년도 아래 삼각혁 클릭시 해당 plan창 열리는 이벤트리스너 추가
+    const planTriangles = document.querySelectorAll("tbody img");
+
+    planTriangles.forEach((planTriangle, index) => {
+        planTriangle.addEventListener("click", openYearplan);
+        planTriangle.addEventListener("click", function(){
+            const yearHere = this.previousElementSibling.innerText;
+            const plans = planList.filter((annualPlan, index) => {
+                return annualPlan.year == yearHere;
+            });
+            roadYearplanDetail(plans);
+        });
+    });
+
     console.log(`openPlan 이벤트리스너가 추가되었습니다.`);
 };
 
@@ -115,12 +135,7 @@ function closeYearplan() {
 };
 
 // 로드맵 선택한 년도의 플랜 렌더
-function roadYearplanDetail() {
-    
-    const plans = planList.filter((annualPlan, index) => {
-        return annualPlan.year == this.innerText;
-    });
-
+function roadYearplanDetail(plans) {
     // 타이틀 년도
     document.querySelector("#planYear th").innerText = plans[0].year;
     const target = document.querySelector("#planUl");
@@ -133,7 +148,6 @@ function roadYearplanDetail() {
         else
             return html + `<li style="color:#900">${eachplan.title}</li>`;
     }, "");
-
 };
 
 const init= () => {
