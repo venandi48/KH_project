@@ -12,11 +12,11 @@ header {
     position: relative;
     
     padding-bottom: 20px;
-    height: 748px;
+    height: 710px;
 }
 /*--------------------- motto ----------------------*/
 header hr {
-    margin-right: 22px;
+    margin-right: 35px;
     margin-bottom: 10px;
     width: 100px;
     height: 2px;
@@ -24,7 +24,7 @@ header hr {
     background-color: #000;
 }
 .motto {
-    padding-right: 22px;
+    padding-right: 35px;
     text-align: right;
     font-size: 20px;
     font-weight: 400;
@@ -41,9 +41,13 @@ h1.latin:first-of-type {
     margin-top: 170px;
 }
 /*--------------------- arrow ----------------------*/
-header img.arrow {
+header button.arrow {
     position: absolute;
     bottom: 30px;
+    background: none;
+    border: none;
+}
+header img.arrow {
     width: 60px;
     transform: rotate(90deg);
 }

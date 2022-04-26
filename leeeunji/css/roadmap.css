@@ -79,16 +79,28 @@ hr {
     color: #333;
     font-size: 20px;
     position: relative;
-    /* border: 1px solid #dddd; */
 }
 .roadmapWrapper td p {
+    width: 100px;
     z-index: 1;
     margin: 10px auto;
     width: 100px;
+    border: 1px solid #33333322;
+    border-radius: 50px;
+    transition: .3s;
+    transition-property: border box-shadow;
+}
+.roadmapWrapper td p:hover {
+    border: 1px solid #33333399;
+    box-shadow: 2px 2px 2px #ddd inset;
+    cursor:pointer;
 }
 .roadmapWrapper table img {
     z-index: 1;
     width: 5%;
+}
+.roadmapWrapper table img:hover {
+    cursor:pointer;
 }
 /*---------------------- line ----------------------*/
 .borderDiv {

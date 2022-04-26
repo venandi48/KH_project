@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/mainpage.css">
     <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/common.js"></script>
 </head>
 <body>
     <div id="container">
@@ -33,19 +34,20 @@
                 <img src="./images/logo_home.png" alt="home logo" id="homeLogo">
             </a>
             
-            <br>
             <h1 class="motto latin" id="latinMotto1">Ama et fac</h1>
             <h1 class="motto latin" id="latinMotto2">quod vis</h1>
             <hr>
             <h2 class="motto" id="engMotto">Love and do what you want</h2>
             
-            <img class="arrow" src="./images/arrowhead.png" alt="down arrowhead">
+            <button class="arrow" id="arrowBtn">
+                <img class="arrow" src="./images/arrowhead.png" alt="down arrowhead">
+            </button>
         </header>
         
         <div class="toTheTop">
-            <a href="#top">
+            <button onclick="topFunction();" id="topBtn" title="Go to top">
                 <img src="./images/outline_vertical_align_top_black_24dp.png" alt="to the top">
-            </a>
+            </button>
         </div>
         
         <section id="greetingSection">
@@ -96,8 +98,13 @@
             </p>
         </footer>
 
-        <script></script>
     </div>
     
+    <script>
+        arrowBtn.onclick = () => {
+            const location = document.querySelector("div.left-greeting").offsetTop - 30;
+            window.scrollTo({top: location, behavior: "smooth"});
+        }
+    </script>
 </body>
 </html>

@@ -35,7 +35,7 @@ header {
     justify-content: space-between;
     
     list-style: none;
-    width: 980px;
+    width: 960px;
     height: 70px;
     padding: 10px;
     margin: 0 auto;
@@ -83,13 +83,16 @@ header {
     color: #043c1c;
     font-size: 16px;
 }
+/* 첫번째 메뉴만 활성화 */
+.submenu li:not(:first-of-type){
+    visibility: hidden;
+}
 
 /* 메뉴바 공백 */
 ul.menu li p {
     color:rgb(0, 0, 0, 0);
     width: 500px;
 }
-
 /*---------------------- logo ----------------------*/
 header img#homeLogo {
     position: absolute;
@@ -103,9 +106,12 @@ div.toTheTop {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    background-color: #728476;
+    background-color: #72847694;
     border-radius: 50%;
     text-align: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
 
     position: fixed;
     top: 90%;
@@ -120,6 +126,10 @@ div.toTheTop:hover {
 div.toTheTop img {
     vertical-align: middle;
     width: 80%;
+}
+div.toTheTop button {
+    background: none;
+    border: none;
 }
 
 /*===================== footer =====================*/
