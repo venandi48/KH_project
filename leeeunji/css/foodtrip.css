@@ -1,3 +1,11 @@
+#container {
+    background-image: linear-gradient(#ffffffee,#ffffffee),url(../images/foodtrip_bgi.jpg);
+    background-size: cover;
+    background-position: top;
+}
+#container>*{
+    opacity: 1;
+}
 header {
     height: 100px;
     background: none;
@@ -67,14 +75,25 @@ p.boardTop {
 }
 li.posting {
     margin: 2px;
-    background-color: lightgray;
+    background-color: none;
     width: 300px;
     height: 300px;
+    position: relative;
+    border: 1px solid #ffffff00;
 }
 li.posting img {
     width: inherit;
     height: inherit;
-    
+    border-radius: 10px;
+    opacity: .9;
+}
+li.posting:hover {
+    border: 1px solid #333333ee;
+    border-radius: 10px;
+    cursor: pointer;
+}
+li.posting img:hover {
+    opacity: 1;
 }
 
 /*--------------------- review ---------------------*/
@@ -122,6 +141,10 @@ li.posting img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
+}
+#closeReviewBtn:hover {
+    background-color: #bbac9b;
+    cursor: pointer;
 }
 .review-wrapper {
     padding: 50px 70px;

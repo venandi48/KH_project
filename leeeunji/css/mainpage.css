@@ -1,6 +1,6 @@
 
 #container {
-    background-image: url(../images/alyssa-hurley-yekIZ4ltv1o-unsplash.jpg);
+    background-image: url(../images/mainhome_bgi.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -50,6 +50,9 @@ header button.arrow {
 header img.arrow {
     width: 60px;
     transform: rotate(90deg);
+}
+header img.arrow:hover {
+    cursor: pointer;
 }
 
 /*==================== section =====================*/

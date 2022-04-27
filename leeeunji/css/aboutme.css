@@ -72,7 +72,7 @@ section {
 }
 .intro #toCnCBtn:hover {
     box-shadow: none;
-
+    cursor: pointer;
 }
 /*--------------------- second ---------------------*/
 .channel {
@@ -124,12 +124,14 @@ section {
     background-position: center;
     color: #0d0d0d00;
     background-image: url(../images/github_black.png);
+    cursor: pointer;
 }
 #notion:hover {
     opacity: 0.8;
     background-position: center;
     color: #0d0d0d00;
     background-image: url(../images/notion_black.png);
+    cursor: pointer;
 }
 
 /*--------------------- third ----------------------*/
