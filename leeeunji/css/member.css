@@ -60,6 +60,10 @@ thead th {
     width: 120px;
     color: #0D0D0D;
 }
+.join-table label span {
+    color: red;
+    padding: 1px;
+}
 .join-table input {
     margin: 2px;
     height: 25px;
@@ -67,6 +71,11 @@ thead th {
     border: 1px solid #aaa;
     background-color: #fbfbfb;
     color: #0D0D0D;
+}
+.testFailedMsg {
+    padding: 10px;
+    font-size: 12px;
+    color: red;
 }
 .mailingTd {
     height: 50px;

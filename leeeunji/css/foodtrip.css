@@ -25,10 +25,10 @@ header {
     color: #8A8C3E;
 }
 hr {
-    width: 800px;
+    width: 950px;
     height: 1px;
     background-color: #D9CDBF;
-    opacity: .5;
+    opacity: .8;
     border: none;
 }
 
@@ -36,29 +36,27 @@ hr {
 #postingBoard {
     text-align: center;
 }
+div.boardTop {
+    display: flex;
+    flex-direction: column;
+}
 p.boardTop {
     margin-top: 50px;
     margin-bottom: 20px;
     font-size: 35px;
 }
 
-/*
-    포스팅버튼 비활성 상태
-*/
 #postingBoard button {
-    visibility: hidden;
-    float: right;
     margin: 0 40px 20px;
+    width: 100px;
     height: 25px;
     border: 1px solid #A68965;
     background-color: #FBFBFA;
 }
-#postingBoard hr {
-    margin: 20px;
+#postingBoard button:hover {
+    cursor: pointer;
 }
-#hr1 {
-    clear: right;   
-}
+
 /*-------------------- posting ---------------------*/
 #postingBoardDiv {
     display: flex;
@@ -210,3 +208,5 @@ li.posting img:hover {
 #restaurant-comment {
     padding-top: 15px;
 }
+
+/*--------------------- write ----------------------*/
