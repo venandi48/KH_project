@@ -18,7 +18,7 @@ const reviewPostingAll = [];
 const addTempData = () => {
     let postingNo = 1;
 
-    reviewPostingAll.push(new Review(postingNo++, "20220420_001", new Date("2021/12/25"), "인천광역시 관교동", "테리토리", 4.5, "./images/foodtrip/foodtrip_20220420_001.jpg",
+    reviewPostingAll.push(new Review(postingNo++, "20220420_001", new Date("2021/12/25"), "인천광역시 미추홀구 관교동", "테리토리", 4.5, "./images/foodtrip/foodtrip_20220420_001.jpg",
     `음냐음냐 맛나당`));
     reviewPostingAll.push(new Review(postingNo++, "20220420_002", new Date("2022/02/26"), "인천광역시 중구", "을왕리짱구네", 4.3, "./images/foodtrip/foodtrip_20220420_002.jpg",
 `매콤한 연포탕이라고 생각하면된다. 메뉴는 '빨간거', '하얀거' 이렇게 파는데 빨간게 맛있다.

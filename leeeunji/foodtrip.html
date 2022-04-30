@@ -56,10 +56,10 @@
             <hr id="hr2">
         </section>
 
-        <section class=".reviewSection" id="backgroundPlate">
+        <section class="reviewSection" id="backgroundPlate">
             <!-- 리뷰 선택시 -->
             <div class="visibilityHidden" id="reviewPlate">
-                <button id="closeReviewBtn"></button>
+                <button class="closeBtn" id="closeReviewBtn"></button>
                 <div class="review-wrapper">
                     <!-- 목록에서 고른 포스팅 id(=posting_no)에 따라 이미지, 점포정보 끌어오기-->
                     <h1>Review. <span class="review-element" id="review-posting-no"></span></h1>
@@ -86,37 +86,39 @@
                 </div>
             </div>
 
-            <!-- 포스팅 -->
-            <form action="" name="postingFrm">
-                <table>
-                    <thead>
-                        <tr><th>후기작성</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th><label for="restaurant-name">상호명</label></th>
-                            <td><input type="text" name="restaurant-name" id="addRst_name"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="restaurant-location">위치</label></th>
-                            <td><input type="text" name="restaurant-location" id="addRst_location"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="restaurant-score">평점</label></th>
-                            <td><input type="text" name="restaurant-score" id="addRst_score"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="restaurant-photo">사진</label></th>
-                            <td><input type="text" name="restaurant-photo" id="addRst_photo"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="restaurant-photo">후기</label></th>
-                            <td><textarea name="restaurant-photo" id="addRst_photo"></textarea></td>
-                        </tr>
-                    </tbody>
-                    <tfoot></tfoot>
-                </table>
-            </form>
+            <!-- 포스팅 작성 -->
+            <div class="writing-wrapper-back" id="writingPlate">
+                <button class="closeBtn" id="closeWritingBtn"></button>
+                <form action="" name="postingFrm" id="postingFrm">
+                    <h1>맛집 기록하기</h1>
+                    <table id="writingTb">
+                        <thead></thead>
+                        <tbody>
+                            <tr>
+                                <th><label for="restaurant-name">상호명</label></th>
+                                <td><input type="text" name="restaurant-name" id="addRst_name"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="restaurant-location">위치</label></th>
+                                <td><input type="text" name="restaurant-location" id="addRst_location" placeholder="서울특별시 강남구 역삼동"></td>
+                            </tr>
+                            <tr class="writingScoreRow">
+                                <th class="writingScoreRow"><label for="restaurant-score">평점</label></th>
+                                <td class="writingScoreRow"><input type="number" name="restaurant-score" id="addRst_score" min="0" max="5" step="0.1" placeholder="4.7"><span id="maxPointInfo">/5.0</span></td>
+                            </tr>
+                            <tr class="writingFileRow">
+                                <th class="writingFileRow"><label for="restaurant-photo">사진</label></th>
+                                <td class="writingFileRow"><input type="file" name="restaurant-photo" id="addRst_photo"></td>
+                            </tr>
+                            <tr class="writingCommentRow">
+                                <th class="writingCommentRow"><label for="restaurant-comment">후기</label></th>
+                                <td class="writingCommentRow"><textarea name="restaurant-comment" id="addRst_comment"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="submitBtn">등록</button>
+                </form>
+            </div>
         </section>
 
         <footer>
