@@ -42,10 +42,15 @@
             </button>
         </div>
 
+        <iframe id="bgm" width="0" height="0" src="https://www.youtube.com/embed/zd8eQLw0mGI?autoplay=1&mute=true" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
         <section id="postingBoard">
             <div class="boardTop">
                 <p class="boardTop">맛집 도장깨기</p>
-                <button class="boardTop" id="creatPostingBtn">Posting</button>
+                <div class="boardTopBtn">
+                    <button class="boardTopBtn" id="creatPostingBtn">Posting</button>
+                    <button class="boardTopBtn" id="musicStartBtn">start music</button>
+                </div>
             </div>
             <hr id="hr1">
             <div id="postingBoardDiv">
@@ -56,7 +61,7 @@
             <hr id="hr2">
         </section>
 
-        <section class="reviewSection" id="backgroundPlate">
+        <section class="visibilityHidden" id="backgroundPlate">
             <!-- 리뷰 선택시 -->
             <div class="visibilityHidden" id="reviewPlate">
                 <button class="closeBtn" id="closeReviewBtn"></button>
@@ -74,9 +79,9 @@
                                     <strong><span class="review-element" id="review-score">4.3</span></strong>
                                 </h1>
                             </div>
-                            <p class="posting-date">
-                                <span class="review-element posting-date">작성일 : </span>
-                                <span class="review-element posting-date" id="review-date">2022-04-20</span>
+                            <p class="visiting-date">
+                                <span class="review-element visiting-date">방문일 : </span>
+                                <span class="review-element visiting-date" id="review-date">2022-04-20</span>
                             </p>
                         </div>
                     </div>
@@ -87,7 +92,7 @@
             </div>
 
             <!-- 포스팅 작성 -->
-            <div class="writing-wrapper-back" id="writingPlate">
+            <div class="visibilityHidden" id="writingPlate">
                 <button class="closeBtn" id="closeWritingBtn"></button>
                 <form action="" name="postingFrm" id="postingFrm">
                     <h1>맛집 기록하기</h1>
@@ -98,17 +103,44 @@
                                 <th><label for="restaurant-name">상호명</label></th>
                                 <td><input type="text" name="restaurant-name" id="addRst_name"></td>
                             </tr>
-                            <tr>
-                                <th><label for="restaurant-location">위치</label></th>
-                                <td><input type="text" name="restaurant-location" id="addRst_location" placeholder="서울특별시 강남구 역삼동"></td>
+                            <tr class="writingLocationRow">
+                                <th class="writingLocationRow"><label for="restaurant-location">위치</label></th>
+                                <td class="writingLocationRow">
+                                    <select name="restaurant-location1" id="addRst_location1">
+                                        <option value="서울특별시" selected>서울특별시</option>
+                                        <option value="인천광역시">인천광역시</option>
+                                        <option value="경기도">경기도</option>
+                                        <option value="강원도">강원도</option>
+                                        <option value="충청남도">충청남도</option>
+                                        <option value="충청북도">충청북도</option>
+                                        <option value="대전광역시">대전광역시</option>
+                                        <option value="세종특별자치시">세종특별자치시</option>
+                                        <option value="전라남도">전라남도</option>
+                                        <option value="전라북도">전라북도</option>
+                                        <option value="광주광역시">광주광역시</option>
+                                        <option value="경상남도">경상남도</option>
+                                        <option value="경상북도">경상북도</option>
+                                        <option value="대구광역시">대구광역시</option>
+                                        <option value="부산광역시">부산광역시</option>
+                                        <option value="울산광역시">울산광역시</option>
+                                        <option value="제주특별자치도">제주특별자치도</option>
+                                    </select>
+                                    <input type="text" name="restaurant-location" id="addRst_location" placeholder="시/군/구(필수) 동/읍/리(선택)">
+                                    <span class="testFailedMsg"></span>
+                                </td>
                             </tr>
                             <tr class="writingScoreRow">
                                 <th class="writingScoreRow"><label for="restaurant-score">평점</label></th>
-                                <td class="writingScoreRow"><input type="number" name="restaurant-score" id="addRst_score" min="0" max="5" step="0.1" placeholder="4.7"><span id="maxPointInfo">/5.0</span></td>
+                                <td class="writingScoreRow">
+                                    <input type="number" name="restaurant-score" id="addRst_score" step="0.1" placeholder="4.7"><span id="maxPointInfo">/5.0</span>
+                                    <span class="testFailedMsg"></span>
+                                </td>
                             </tr>
                             <tr class="writingFileRow">
                                 <th class="writingFileRow"><label for="restaurant-photo">사진</label></th>
-                                <td class="writingFileRow"><input type="file" name="restaurant-photo" id="addRst_photo"></td>
+                                <td class="writingFileRow">
+                                    <input type="file" name="restaurant-photo" id="addRst_photo" accept="image/*">
+                                </td>
                             </tr>
                             <tr class="writingCommentRow">
                                 <th class="writingCommentRow"><label for="restaurant-comment">후기</label></th>
