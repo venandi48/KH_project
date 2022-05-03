@@ -1,0 +1,29 @@
+.memberListSection {
+  padding: 30px;
+}
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+}
+table {
+  border-collapse: collapse;
+}
+thead tr:first-child th{
+  padding: 10px;
+  font-size: 25px;
+}
+tbody th, tbody td {
+  border: 1px solid #ddd;
+}
+tbody th {
+  background-color: lightgrey;
+}
+tbody td {
+  font-size: 13px;
+  padding: 2px 7px;
+}
+tbody tr *:first-child {
+  text-align: center;
+}
+tbody tr *:not(:first-child) {
+}

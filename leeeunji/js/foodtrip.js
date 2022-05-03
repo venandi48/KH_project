@@ -13,10 +13,10 @@ class Review {
 }
 
 const reviewPostingAll = [];
+let postingNo = 1;
 
 //임의 데이터 추가 + 포스팅번호 관리
 const addTempData = () => {
-    let postingNo = 1;
 
     reviewPostingAll.push(new Review(postingNo++, "20220420_001", new Date("2021/12/25"), "인천광역시 미추홀구 관교동", "테리토리", 4.3, "./images/foodtrip/foodtrip_20220420_001.jpg",
 `메뉴 플레이팅을 예쁘게 해준다. 보통 플레이팅 예쁜 인스타감성 브런치집은 맛없는 경우가 종종 있는데, 여기는 맛도 괜찮고 좋다. 시즌별로 메뉴가 바뀌니 시즌메뉴가 마음에 든다면 없어지기전에 먹어봐야한다.
@@ -33,23 +33,30 @@ const addTempData = () => {
 `인테리어가 우드톤이기도하고, 돌을 활용해서 따뜻하고 고즈넉한 느낌을 준다. 주차공간이 마련되어있어서 차끌고 가기에도 괜찮다. 소품류와 원두도 판매하고있어서 커피나오는동안 잠시 둘러보기 좋다.
 주말에는 사람이 많아서 생각만큼 조용한 분위기가 나지 않을 수 있다.
 흑임자케이크가 괜찮았다.`));
-    reviewPostingAll.push(new Review(postingNo++, "20210501_003", new Date("2021/12/23"), "서울특별시 강남구 청담동", "옳음", 4.5, "./images/foodtrip/foodtrip_20220501_003.jpg",
+    reviewPostingAll.push(new Review(postingNo++, "20220501_003", new Date("2021/12/23"), "서울특별시 강남구 청담동", "옳음", 4.5, "./images/foodtrip/foodtrip_20220501_003.jpg",
 `청담동에 있는 모던 한식 파인다이닝이고, 미쉐린 가이드에도 소개되었다.
 방문일에는 룸 예약자가 없어서, 가장 먼저 예약했다고 룸으로 안내해주셨다.
 개인적으로 트러플파스타는... 트러플 좋아하는 사람들은 좋았겠지만, 나는 트러플 싫어해서 별로였다.
 그래도 코스가 전반적으로 맛있는데, 특히 금태요리가 충격적으로 부드럽고 맛있다.
 모던 한식 파인다이닝이라 한식 재료와 서양식 재료를 같이 사용한 코스가 많은데, 굉장히 신선하다.
 가격은.. 비싸긴해도 뭐 맛있으니까 특별한 날에 한번쯤 갈만하다고 생각한다.`));
-    reviewPostingAll.push(new Review(postingNo++, "20210501_004", new Date("2021/10/17"), "서울특별시 영등포구 문래동", "머트리얼", 3.7, "./images/foodtrip/foodtrip_20220501_004.jpg",
+    reviewPostingAll.push(new Review(postingNo++, "20220501_004", new Date("2021/10/17"), "서울특별시 영등포구 문래동", "머트리얼", 3.7, "./images/foodtrip/foodtrip_20220501_004.jpg",
 `지하에 있어서 채광은 없고, 왠지 환기가 안되지않을까 하는 걱정이 들었다. 그래도 화장실 깨끗한걸 보면 환기도 알아서 잘 하지않을까?
 오후에 갔더니 바스크치즈케이크는 품절이라 못먹었다. 다른 디저트는 특별하게 맛있는건 아니여도 괜찮았다.`));
-    reviewPostingAll.push(new Review(postingNo++, "20210501_005", new Date("2021/05/21"), "서울특별시 마포구 도화동", "뫼촌", 4.0, "./images/foodtrip/foodtrip_20220501_005.jpg",
+    reviewPostingAll.push(new Review(postingNo++, "20220503_001", new Date("2021/05/21"), "서울특별시 마포구 도화동", "뫼촌", 4.0, "./images/foodtrip/foodtrip_20220501_005.jpg",
 `최자로드맛집이라는데... 최자로드는 잘 모르지만, 맛있긴하다.
 웨이팅도 있다. 저녁타임에는 술도 같이 시켜먹는 테이블이 많다보니 웨이팅이 잘 안빠진다.
 일반 닭볶음탕이랑 달리 국물이 없어서 밥 비벼서 먹진 못하니까 살짝 아쉽다.
 그리고 은은하게 불닭볶음면 정도의 맵기가 올라와서 맵찔이는 땀이 날 수 있다.
 감자전은 같이 시켜먹으면 덜 매운 것 같기도하고, 일단 감자전은 맛있으니까 시켜먹는게 좋다.`));
+
+    reviewSort();
 };
+const reviewSort = () => {
+    reviewPostingAll.sort((a, b) => {
+        return b.posting_no - a.posting_no
+    })
+}
 
 // 신규 포스팅 버튼에 클릭 이벤트 추가
 const addWritingListener = () => {
@@ -67,7 +74,7 @@ const addWritingListener = () => {
     });
 };
 
-// 제출시
+// 제출시 검사 -> 결과에 따라 다시 렌더 or 알림창 띄우기
 const postingValSubmit = () => {
     let result = true;
 
@@ -75,7 +82,7 @@ const postingValSubmit = () => {
 
         // 위치
         // 입력가능문자 검사 -> 행정구역 검사 
-        const locationVal = addRst_location.value;
+        const locationVal = addRst_location2.value;
         if(!/^[가-힣]+\s?[가-힣0-9\-]*$/g.test(locationVal)){
             printFailedMsg("writingLocationRow", "한글, 띄어쓰기 한 개만 사용하세요.");
             result = false;
@@ -90,6 +97,19 @@ const postingValSubmit = () => {
                 result = false;
             } else resetMsg("writingLocationRow");
         }
+
+        // 방문일
+        const dateVal = addRst_visitingDate.value;
+        const inputDate = new Date(dateVal.substring(0,4), parseInt(dateVal.substring(5,7))-1, dateVal.substring(8,10));
+        const date = new Date();
+        if(dateVal == "") {
+            printFailedMsg("writingVisitingDateRow", "방문일을 입력하세요.");
+            result = false;
+        }
+        else if(inputDate > date){
+            printFailedMsg("writingVisitingDateRow", "방문일은 과거로 입력하세요.");
+            result = false;
+        } else resetMsg("writingVisitingDateRow");
         
         // 평점
         if(!/^([0-5]|[0-4].[0-9]|5.0)$/.test(addRst_score.value)){
@@ -97,11 +117,49 @@ const postingValSubmit = () => {
             result = false;
         } else resetMsg("writingScoreRow");
 
-        return result;
+        // 새로고침없이 객체 추가 및 다시 렌더
+        if(result == true) {
+            pushNewPosting();
+            postingBoardRender();
+            addOpenReviewListener();
+            addcloseReviewListener();
+
+            closeWriting();
+            e.preventDefault();
+        }
+        else {
+            alert("후기등록에 실패하였습니다.");
+            return result;
+        };
     };
-
 }
+const pushNewPosting = () => {
 
+    // 포스팅 id부여
+    const today = getYYYYMMDD(new Date());
+    const {review_id: recent_id} = reviewPostingAll[0]; // 가장 최근 작성 리뷰id
+    let newPostingId = "";
+    // 같은 날 작성된 포스팅이 있는 경우
+    if(recent_id.substring(0, 8) == today) {
+        const todayLastNo = parseInt(recent_id.substring(9,));
+        newPostingId = `${today}_${threeDigitNum(todayLastNo+1)}`
+    } 
+    // 같은 날 작성된 포스팅이 없는 경우
+    else {
+        newPostingId = `${today}_${threeDigitNum(1)}`
+    }
+
+    // 주소 병합
+    const addr = `${addRst_location1.value} ${addRst_location2.value}`;
+
+    // 이미지 경로 공백상태로 추가
+    reviewPostingAll.unshift(new Review(postingNo++, newPostingId, new Date(addRst_visitingDate.value), addr, addRst_name.value, addRst_score.value, "", addRst_comment.value));
+};
+function threeDigitNum(num) {
+    if(num < 10) return "00"+num
+    else if(num < 100) return "0"+num;
+    else return num;
+}
 const printFailedMsg = (targetClass, msg) => {
     document.querySelector(`.${targetClass} span.testFailedMsg`).innerHTML = msg;
 };
@@ -112,26 +170,27 @@ const resetMsg = (targetClass) => {
 const addCloseWritingListener = () => {
     const target = document.querySelector("#closeWritingBtn");
 
-    target.addEventListener("click", () => {
-        // 입력내용 초기화
-        const inputAll = document.querySelectorAll("#writingTb input");
-        inputAll.forEach((input, index) => {
-            input.value = "";
-        });
-        document.querySelector("#writingTb select").value = "서울특별시";
-        document.querySelector("#writingTb textarea").value = "";
-
-        const backgroundPlate = document.getElementById("backgroundPlate");
-        const writingPlate = document.getElementById("writingPlate");
-        
-        // hidden으로 변경
-        backgroundPlate.classList.add("visibilityHidden");
-        backgroundPlate.classList.remove("reviewSection");
-
-        writingPlate.classList.add("visibilityHidden");
-        writingPlate.classList.remove("writing-wrapper-back");
-    });
+    target.addEventListener("click", closeWriting);
 };
+function closeWriting() {
+    // 입력내용 초기화
+    const inputAll = document.querySelectorAll("#writingTb input");
+    inputAll.forEach((input, index) => {
+        input.value = "";
+    });
+    document.querySelector("#writingTb select").value = "서울특별시";
+    document.querySelector("#writingTb textarea").value = "";
+
+    const backgroundPlate = document.getElementById("backgroundPlate");
+    const writingPlate = document.getElementById("writingPlate");
+    
+    // hidden으로 변경
+    backgroundPlate.classList.add("visibilityHidden");
+    backgroundPlate.classList.remove("reviewSection");
+
+    writingPlate.classList.add("visibilityHidden");
+    writingPlate.classList.remove("writing-wrapper-back");
+}
 
 const addOpenReviewListener = () => {
     const reviews = document.querySelectorAll("#postingBoardDiv li");
@@ -193,11 +252,12 @@ function roadReviewDetail(){
 
 const postingBoardRender = () => {
     const target = document.querySelector("#postingBoardDiv ul")
-    // console.log(target);
 
-    const reverseReviewAll = [...reviewPostingAll].reverse();
-    target.innerHTML = reverseReviewAll.reduce((html, review, index) => {
-        return html + `<li class="posting" id="${review.review_id}"><img src="${review.restaurant_photo}" alt=""></img></li>`;
+    target.innerHTML = reviewPostingAll.reduce((html, review, index) => {
+        if(review.restaurant_photo==""){
+            return html + `<li class="posting" id="${review.review_id}"><img src="./images/notFound.png" alt=""></img></li>`;    
+        }
+        else return html + `<li class="posting" id="${review.review_id}"><img src="${review.restaurant_photo}" alt=""></img></li>`;
     }, "");
 
 };
@@ -209,18 +269,27 @@ const reviewDetailRender = (review) => {
     // 상호명 + 점수 한번에 대입
     document.getElementById("restaurant-name").innerHTML = `${review.restaurant_name}<strong><span class="review-element" id="review-score">${review.review_score}</span></strong>`;
     
-    const date = getYYYYMMDD(review.review_date);
+    const date = getYYYY_MM_DD(review.review_date);
     document.getElementById("review-date").innerText = date;
     
     document.getElementById("restaurant-comment").innerText = review.restaurant_comment;
     
-    document.getElementById("restaurant-photo").outerHTML = `<img id="restaurant-photo" src="${review.restaurant_photo}" alt="">`;
+    if(review.restaurant_photo==""){
+        document.getElementById("restaurant-photo").outerHTML = `<img id="restaurant-photo" src="./images/notFound.png" alt="">`;
+    }
+    else document.getElementById("restaurant-photo").outerHTML = `<img id="restaurant-photo" src="${review.restaurant_photo}" alt="">`;
 };
-function getYYYYMMDD(date) {
+function getYYYY_MM_DD(date) {
     const yyyy = date.getFullYear();
     const mm = twoDigitNum(date.getMonth() + 1);
     const dd = twoDigitNum(date.getDate());
     return `${yyyy}-${mm}-${dd}`;
+}
+function getYYYYMMDD(date) {
+    const yyyy = date.getFullYear();
+    const mm = twoDigitNum(date.getMonth() + 1);
+    const dd = twoDigitNum(date.getDate());
+    return `${yyyy}${mm}${dd}`;
 }
 function twoDigitNum(num) {
     return num < 10 ? "0"+num : num;
@@ -242,12 +311,9 @@ const unmuteMusic = () => {
 }
 
 const init = () => {
-    // 임의 데이터 추가
+    // 기본 리뷰데이터 추가
     addTempData();
     console.log("페이지 로드 완료");
-
-    // 데이터 잘 들어갔는지 체크
-    // console.log("객체배열로드결과 : ", reviewPostingAll);
     postingBoardRender();
 
     // 각 리뷰에 이벤트리스너 추가

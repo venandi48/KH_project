@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EunJi Life</title>
+  <link rel="shortcut icon" href="./images/logo_home.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/memberList.css">
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/member.js"></script>
+  <script src="./js/memberList.js"></script>
+</head>
+<body>
+
+  <div id="container">
+    <header>
+      <ul class="menu">
+        <li><a id="AboutMe" href="aboutme.html">About Me</a></li>
+        <li>
+          <a id="spareTime" href="#">Spare time</a>
+          <ul class="submenu">
+            <li><a class="subM-transition" href="foodtrip.html">Food trip</a></li>
+            <li><a class="subM-transition" href="#">Music</a></li>
+          </ul>
+        </li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><p id="blankP"></p></li>
+        <li class="memberMenu"><a href="login.html">login</a></li>
+        <li class="memberMenu"><a href="member.html">join</a></li>
+      </ul>
+      <a href="index.html">
+          <img src="./images/logo_home.png" alt="home logo" id="homeLogo">
+      </a>
+    </header>
+  
+    <div class="toTheTop">
+      <button onclick="topFunction();" id="topBtn" title="Go to top">
+        <img src="./images/outline_vertical_align_top_black_24dp.png" alt="to the top">
+      </button>
+    </div>
+
+    <section class="memberListSection">
+      <div class="table-wrapper">
+        <table id="memberTable">
+          <thead>
+            <tr>
+              <th colspan="9">회원목록</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="colName">no.</th>
+              <th class="colName essentialCol">아이디</th>
+              <th class="colName essentialCol">비밀번호</th>
+              <th class="colName essentialCol">이름</th>
+              <th class="colName essentialCol">성별</th>
+              <th class="colName essentialCol">전화번호</th>
+              <th class="colName essentialCol">이메일</th>
+              <th class="colName additionalCol">주소</th>
+              <th class="colName additionalCol">생년월일</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+  </div>
+</body>
+</html>

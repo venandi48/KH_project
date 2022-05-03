@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/foodtrip.css">
+    <!-- <script src="./js/jquery-3.6.0.js"></script> -->
     <script src="./js/foodtrip.js"></script>
     <script src="./js/common.js"></script>
 </head>
@@ -42,7 +43,7 @@
             </button>
         </div>
 
-        <iframe id="bgm" width="0" height="0" src="https://www.youtube.com/embed/zd8eQLw0mGI?autoplay=1&mute=true" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="bgm" width="0" height="0" src="https://www.youtube.com/embed/xRnAeJF31SY?autoplay=1&mute=true" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         <section id="postingBoard">
             <div class="boardTop">
@@ -94,62 +95,71 @@
             <!-- 포스팅 작성 -->
             <div class="visibilityHidden" id="writingPlate">
                 <button class="closeBtn" id="closeWritingBtn"></button>
-                <form action="" name="postingFrm" id="postingFrm">
-                    <h1>맛집 기록하기</h1>
-                    <table id="writingTb">
-                        <thead></thead>
-                        <tbody>
-                            <tr>
-                                <th><label for="restaurant-name">상호명</label></th>
-                                <td><input type="text" name="restaurant-name" id="addRst_name"></td>
-                            </tr>
-                            <tr class="writingLocationRow">
-                                <th class="writingLocationRow"><label for="restaurant-location">위치</label></th>
-                                <td class="writingLocationRow">
-                                    <select name="restaurant-location1" id="addRst_location1">
-                                        <option value="서울특별시" selected>서울특별시</option>
-                                        <option value="인천광역시">인천광역시</option>
-                                        <option value="경기도">경기도</option>
-                                        <option value="강원도">강원도</option>
-                                        <option value="충청남도">충청남도</option>
-                                        <option value="충청북도">충청북도</option>
-                                        <option value="대전광역시">대전광역시</option>
-                                        <option value="세종특별자치시">세종특별자치시</option>
-                                        <option value="전라남도">전라남도</option>
-                                        <option value="전라북도">전라북도</option>
-                                        <option value="광주광역시">광주광역시</option>
-                                        <option value="경상남도">경상남도</option>
-                                        <option value="경상북도">경상북도</option>
-                                        <option value="대구광역시">대구광역시</option>
-                                        <option value="부산광역시">부산광역시</option>
-                                        <option value="울산광역시">울산광역시</option>
-                                        <option value="제주특별자치도">제주특별자치도</option>
-                                    </select>
-                                    <input type="text" name="restaurant-location" id="addRst_location" placeholder="시/군/구(필수) 동/읍/리(선택)">
-                                    <span class="testFailedMsg"></span>
-                                </td>
-                            </tr>
-                            <tr class="writingScoreRow">
-                                <th class="writingScoreRow"><label for="restaurant-score">평점</label></th>
-                                <td class="writingScoreRow">
-                                    <input type="number" name="restaurant-score" id="addRst_score" step="0.1" placeholder="4.7"><span id="maxPointInfo">/5.0</span>
-                                    <span class="testFailedMsg"></span>
-                                </td>
-                            </tr>
-                            <tr class="writingFileRow">
-                                <th class="writingFileRow"><label for="restaurant-photo">사진</label></th>
-                                <td class="writingFileRow">
-                                    <input type="file" name="restaurant-photo" id="addRst_photo" accept="image/*">
-                                </td>
-                            </tr>
-                            <tr class="writingCommentRow">
-                                <th class="writingCommentRow"><label for="restaurant-comment">후기</label></th>
-                                <td class="writingCommentRow"><textarea name="restaurant-comment" id="addRst_comment"></textarea></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="submitBtn">등록</button>
-                </form>
+                <div>
+                    <form action="" name="postingFrm" id="postingFrm">
+                        <h1>맛집 기록하기</h1>
+                        <table id="writingTb">
+                            <thead></thead>
+                            <tbody>
+                                <tr>
+                                    <th><label for="restaurant-name">상호명</label></th>
+                                    <td><input type="text" name="restaurant-name" id="addRst_name"></td>
+                                </tr>
+                                <tr class="writingLocationRow">
+                                    <th class="writingLocationRow"><label for="restaurant-location">위치</label></th>
+                                    <td class="writingLocationRow">
+                                        <select name="restaurant-location1" id="addRst_location1">
+                                            <option value="서울특별시" selected>서울특별시</option>
+                                            <option value="인천광역시">인천광역시</option>
+                                            <option value="경기도">경기도</option>
+                                            <option value="강원도">강원도</option>
+                                            <option value="충청남도">충청남도</option>
+                                            <option value="충청북도">충청북도</option>
+                                            <option value="대전광역시">대전광역시</option>
+                                            <option value="세종특별자치시">세종특별자치시</option>
+                                            <option value="전라남도">전라남도</option>
+                                            <option value="전라북도">전라북도</option>
+                                            <option value="광주광역시">광주광역시</option>
+                                            <option value="경상남도">경상남도</option>
+                                            <option value="경상북도">경상북도</option>
+                                            <option value="대구광역시">대구광역시</option>
+                                            <option value="부산광역시">부산광역시</option>
+                                            <option value="울산광역시">울산광역시</option>
+                                            <option value="제주특별자치도">제주특별자치도</option>
+                                        </select>
+                                        <input type="text" name="restaurant-location2" id="addRst_location2" placeholder="시/군/구(필수) 동/읍/리(선택)">
+                                        <span class="testFailedMsg"></span>
+                                    </td>
+                                </tr>
+                                <tr class="writingVisitingDateRow">
+                                    <th class="writingVisitingDateRow"><label for="review-date">방문일</label></th>
+                                    <td class="writingVisitingDateRow">
+                                        <input type="date" name="review-date" id="addRst_visitingDate">
+                                        <span class="testFailedMsg"></span>
+                                    </td>
+                                </tr>
+                                <tr class="writingScoreRow">
+                                    <th class="writingScoreRow"><label for="restaurant-score">평점</label></th>
+                                    <td class="writingScoreRow">
+                                        <input type="number" name="restaurant-score" id="addRst_score" step="0.1" placeholder="4.7"><span id="maxPointInfo">/5.0</span>
+                                        <span class="testFailedMsg"></span>
+                                    </td>
+                                </tr>
+                                <tr class="writingFileRow">
+                                    <th class="writingFileRow"><label for="restaurant-photo">사진</label></th>
+                                    <td class="writingFileRow">
+                                        <input type="file" name="restaurant-photo" id="addRst_photo" accept="image/*" disabled>
+                                    </td>
+                                </tr>
+                                <tr class="writingCommentRow">
+                                    <th class="writingCommentRow"><label for="restaurant-comment">후기</label></th>
+                                    <td class="writingCommentRow"><textarea name="restaurant-comment" id="addRst_comment"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="submitBtn">등록</button>
+                    </form>
+                </div>
             </div>
         </section>
 

@@ -59,6 +59,9 @@ div.boardTopBtn {
 #postingBoard button:hover {
     cursor: pointer;
 }
+.boardTopBtn #creatPostingBtn {
+    box-shadow: 1px 1px 10px 2px #dddddddd;
+}
 .boardTopBtn #musicStartBtn {
     border: 1px dashed #A68965;
     background-color: #FBFBFA66;
@@ -238,10 +241,16 @@ li.posting img:hover {
     display: flex;
     justify-content: center;
 
+    overflow: scroll;
     z-index: 100;
 }
 .writing-wrapper-back::-webkit-scrollbar {
     display: none;
+}
+#writingPlate>div {
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 #postingFrm {
     display: flex;
@@ -257,14 +266,13 @@ li.posting img:hover {
 }
 #writingTb {
     font-size: 15px;
-    height: 500px;
+    height: 400px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 
     display: flex;
 }
 #writingTb tr {
-    /* background-color: #ddd; */
     height: 50px;
 }
 #writingTb th, #writingTb td {
@@ -297,9 +305,6 @@ li.posting img:hover {
 #writingTb .writingFileRow input {
     font-size: 12px;
 }
-#writingTb tr.writingCommentRow {
-    height: 200px;
-}
 .writingCommentRow {
     vertical-align: top;
 }
@@ -308,7 +313,7 @@ li.posting img:hover {
 }
 #writingTb textarea {
     width: 500px;
-    height: 250px;
+    height: 100px;
 
     font-size: 14px;
     font-family: 'Noto Sans KR', sans-serif;

@@ -135,12 +135,18 @@ label.address  {
     border-radius: 0px 0px 5px 5px;
 }
 #moveToJoin {
-    margin: 30px auto 30px;
+    margin: 30px auto 15px;
     font-size: 15px;
     color: #888;
     text-decoration: none;
 }
-#moveToJoin:hover {
+#moveToMemberList {
+    margin: 15px auto 30px;
+    font-size: 15px;
+    color: #888;
+    text-decoration: none;
+}
+#moveToJoin:hover, #moveToMemberList:hover{
     color: #043c1c;
     text-decoration: none;
 }

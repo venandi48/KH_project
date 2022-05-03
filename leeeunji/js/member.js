@@ -1,3 +1,18 @@
+class Member {
+  constructor(id, pw, name, gender, tel, email, addr, birthday){
+    this.id = id;
+    this.pw = pw;
+    this.name = name;
+    this.gender = gender;
+    this.tel = tel;
+    this.email = email;
+    this.addr = addr;
+    this.birthday = birthday;
+  }
+}
+const memberAll = [];
+
+//***** 회원가입 페이지 *****//
 const addSubmitHandler = () => {
   // 최종 반환할 유효성검사결과 상태
   let result = true;
@@ -65,5 +80,6 @@ const resetMsg = (targetClass) => {
 };
 
 const init = () => {
+
   addSubmitHandler();
 };
