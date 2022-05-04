@@ -303,6 +303,7 @@ li.posting img:hover {
     vertical-align: middle;
 }
 #writingTb .writingFileRow input {
+    width: 170px;
     font-size: 12px;
 }
 .writingCommentRow {
