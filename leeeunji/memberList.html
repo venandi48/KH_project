@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/memberList.css">
   <script src="./js/jquery-3.6.0.js"></script>
-  <script src="./js/member.js"></script>
+  <script src="./js/memberBase.js"></script>
   <script src="./js/memberList.js"></script>
 </head>
 <body>
@@ -49,7 +49,7 @@
         <table id="memberTable">
           <thead>
             <tr>
-              <th colspan="9">회원목록</th>
+              <th colspan="10">회원목록<br><span>* 개인정보보호를 위해 일부 정보는 노출되지않습니다.</span></th>
             </tr>
           </thead>
           <tbody>
@@ -63,6 +63,7 @@
               <th class="colName essentialCol">이메일</th>
               <th class="colName additionalCol">주소</th>
               <th class="colName additionalCol">생년월일</th>
+              <th class="colName additionalCol">메일수신</th>
             </tr>
           </tbody>
         </table>

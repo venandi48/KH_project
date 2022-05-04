@@ -11,12 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/member.css">
+    <script src="./js/jquery-3.6.0.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/memberBase.js"></script>
     <script src="./js/member.js"></script>
     <script src="./js/postcodeAPI.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
-<body onload="init();">
+<body>
 
     <div id="container">
         <header>
@@ -46,7 +48,7 @@
         </div>
 
         <section class="joinSection">
-            <form action="" name="joinFrm">
+            <form name="joinFrm" action="javascript:saveMemberData();">
                 <h1>회원가입</h1>
 
                 <table class="join-table basicInfo">

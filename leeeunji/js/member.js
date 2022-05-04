@@ -1,25 +1,11 @@
-class Member {
-  constructor(id, pw, name, gender, tel, email, addr, birthday){
-    this.id = id;
-    this.pw = pw;
-    this.name = name;
-    this.gender = gender;
-    this.tel = tel;
-    this.email = email;
-    this.addr = addr;
-    this.birthday = birthday;
-  }
-}
-const memberAll = [];
-
 //***** 회원가입 페이지 *****//
-const addSubmitHandler = () => {
-  // 최종 반환할 유효성검사결과 상태
-  let result = true;
 
-  // 유효성검사
+// form onsubmit 유효성검사
+const addSubmitHandler = () => {
   document.joinFrm.onsubmit = (e) => {
-            
+    // 최종 반환할 유효성검사결과 상태
+    let result = true;
+
     // 아이디
     // 4~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능
     if(!/^[a-z0-9_-]{4,20}$/.test(userId.value)) {
@@ -55,7 +41,7 @@ const addSubmitHandler = () => {
     } else resetMsg("genders");
 
     // 전화번호
-    if(!/^[0-9]{3,4}$/.test(tel2.value) || !/^[0-9]{4}$/.test(test3.value)){
+    if(!/^[0-9]{3,4}$/.test(tel2.value) || !/^[0-9]{4}$/.test(tel3.value)){
       printFailedMsg("tel", "10~11자의 숫자를 입력해주세요.");
       result = false;
     } else resetMsg("tel");
@@ -66,6 +52,7 @@ const addSubmitHandler = () => {
       printFailedMsg("email", "올바른 형식의 이메일이 아닙니다.");
       result = false;
     } else resetMsg("email");
+    
     
     return result;
   };
@@ -79,7 +66,48 @@ const resetMsg = (targetClass) => {
   document.querySelector(`span.${targetClass}`).innerHTML = "";
 };
 
-const init = () => {
+const saveMemberData = () => {
+  console.log("saveMemberData");
 
+  const userIdVal = userId.value;
+  const userPwVal = userPw.value;
+  const userNameVal = userName.value;
+
+  let $userGender = "";
+  if($("#gender-female").prop("checked")){
+    $userGender = $("#gender-female").val();
+  } else $userGender = $("#gender-male").val()
+
+  const userTelVal = `${tel1.value}-${tel2.value}-${tel3.value}`;
+  const userEmailVal = email.value;
+
+  let userAddrVal = undefined;
+  if(postcode.value || detailAddress.value){
+    userAddrVal = `${postcode.value} ${address.value} ${detailAddress.value}`;
+  }
+
+  let userBirthdayVal = "";
+  if(birth.value) userBirthdayVal = birth.value;
+
+  const userMailingVal = mailing.checked;
+
+
+  const member = new Member(userIdVal, userPwVal, userNameVal, $userGender, userTelVal, userEmailVal, userAddrVal, userBirthdayVal, userMailingVal);
+  memberAll.push(member);
+
+  localStorage.setItem("memberAll", JSON.stringify(memberAll));
+
+  document.joinFrm.reset();
+
+  const bool = confirm(`회원목록 페이지로 이동하시겠습니까?
+(취소를 누르면 현재페이지에 머무릅니다.)`);
+  if(bool){
+    const memberlistPage = open("memberList.html", "_self", "");
+  }
+
+};
+
+window.onload = () => {
+  addTempData();
   addSubmitHandler();
 };

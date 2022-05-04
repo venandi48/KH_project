@@ -12,18 +12,26 @@ thead tr:first-child th{
   padding: 10px;
   font-size: 25px;
 }
+thead tr span {
+  font-size: 13px;
+  font-weight: 300;
+  color: #888;
+}
 tbody th, tbody td {
-  border: 1px solid #ddd;
+  border: 1px solid #888;
 }
 tbody th {
-  background-color: lightgrey;
+  font-size: 14px;
+  padding: 1px 5px;
+  background-color: #D9CDBF;
+}
+tbody th:first-of-type, tbody th.additionalCol {
+  background-color: #ddd;
 }
 tbody td {
   font-size: 13px;
   padding: 2px 7px;
 }
-tbody tr *:first-child {
+tbody tr *:first-child, tbody tr *:last-child {
   text-align: center;
-}
-tbody tr *:not(:first-child) {
 }
