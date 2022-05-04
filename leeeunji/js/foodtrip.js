@@ -78,9 +78,9 @@ const addWritingListener = () => {
 
 // 제출시 검사 -> 결과에 따라 다시 렌더 or 알림창 띄우기
 const postingValSubmit = () => {
-    let result = true;
-
+    
     document.postingFrm.onsubmit = (e) => {
+        let result = true;
 
         // 위치
         // 입력가능문자 검사 -> 행정구역 검사 
@@ -119,7 +119,6 @@ const postingValSubmit = () => {
             result = false;
         } else resetMsg("writingScoreRow");
 
-        console.log(document.querySelector("#addRst_photo").files);
 
         if(document.querySelector("#addRst_photo").files.length == 0){
             printFailedMsg("writingFileRow", "사진을 첨부하세요.");
@@ -129,7 +128,7 @@ const postingValSubmit = () => {
         if(result == false) {
             alert("후기등록에 실패하였습니다.");
             return result;
-        };
+        }
         return true;
     };
 };
