@@ -12,8 +12,7 @@ class Review {
     }
 }
 
-const reviewPostingAll = JSON.parse(localStorage.getItem("reviewPostingAll")) || [];
-let postingNo = JSON.parse(localStorage.getItem("reviewPostingAll")) ? JSON.parse(localStorage.getItem("reviewPostingAll"))[0].posting_no + 1 : 1;
+
 
 //임의 데이터 추가 + 포스팅번호 내림차순 정렬
 const addTempData = () => {
@@ -140,13 +139,16 @@ const resetMsg = (targetClass) => {
     document.querySelector(`.${targetClass} span.testFailedMsg`).innerHTML = "";
 };
 
+const reviewPostingAll = JSON.parse(localStorage.getItem("reviewPostingAll")) || [];
+let postingNo = JSON.parse(localStorage.getItem("reviewPostingAll")) ? JSON.parse(localStorage.getItem("reviewPostingAll"))[0].posting_no + 1 : 1;
+
 // 포스팅 작성 완료시 웹스토리지에 데이터 저장 및 재렌더
 const savePostingData = () => {
     console.log("savePostingData");
-    
+
     const postingNoVal = postingNo++;
 
-    // 리뷰 id부여
+    // 리뷰 id부여 (format : YYYYMMDD_xxx)
     const today = getYYYYMMDD(new Date());
     const {review_id: recent_id} = reviewPostingAll[0]; // 가장 최근 작성 리뷰id
     let reviewIdVal = "";

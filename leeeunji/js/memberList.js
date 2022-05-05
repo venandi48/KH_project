@@ -15,7 +15,7 @@ const renderTable = (memberAll = JSON.parse(localStorage.getItem("memberAll"))) 
     }, "")
     const safeAddrFunc = (addr) => {
       const result = addr.split(" ").reduce((merge, part, index) => {
-        if(index < 3) {
+        if(index > 0 && index < 4) {
           return merge + " " + part;
         } else return merge;
       }, "");

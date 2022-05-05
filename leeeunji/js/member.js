@@ -99,7 +99,8 @@ const saveMemberData = () => {
 
   document.joinFrm.reset();
 
-  const bool = confirm(`회원목록 페이지로 이동하시겠습니까?
+  const bool = confirm(`[회원가입완료]
+회원목록 페이지로 이동하시겠습니까?
 (취소를 누르면 현재페이지에 머무릅니다.)`);
   if(bool){
     const memberlistPage = open("memberList.html", "_self", "");

@@ -30,9 +30,9 @@ const addOpenTabListener = () => {
     });
 };
 
-const init = () => {
+window.onload = () => {
     introToday(new Date());
-
+    
     addBtnEventListener();
     addOpenTabListener();
-};
+}
